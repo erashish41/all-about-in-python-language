@@ -30,15 +30,16 @@ def fibonacci(n):
 for num in fibonacci(5):
     print(num)
 
+print(">>>>>> generator test >>>>>")
 # with yield generator
 def return_evens(lst):
-    for l in lst:
+    for l in range(lst + 1):
         if l % 2 == 0:
             yield l
 
-eggs = [x for x in range(20)]
-
-print(list(return_evens(eggs)))
+for even in return_evens(10):
+    print(even)
+print(">>>> generator end >>>")
 
 # Decorator
 def my_decorator(func):
@@ -62,3 +63,19 @@ from django.http import HttpResponse
 @login_required
 def my_view(request):
     return HttpResponse("Hello, this is my first Django response")
+
+print(">>>>>decorator two>>>>")
+# or 
+def decorator_name(func):
+    print("hi decorator")
+    def wrapper(*args, **kwargs):
+        print("before execute")
+        result = func(*args, **kwargs)
+        print("after execute")
+        return result
+    return wrapper
+
+@decorator_name
+def add(a,b):
+    return a+ b
+print(add(9,2))
