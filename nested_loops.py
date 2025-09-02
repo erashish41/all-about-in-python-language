@@ -12,6 +12,7 @@ def nested_loop():
 result = nested_loop()
 print(">>>>1>>>>",result)
 
+# 
 ll = [[10,20,30], [40,50,60],[70,80,90]]
 def nested_ll(data):
     for l in data:
