@@ -1,3 +1,5 @@
+# Decorator, Generator
+
 #  1.Fibonacci series - sum of the two preceding ones, starting from 0 and 1
 # (a, b = b, a + b)
 
@@ -21,6 +23,30 @@ result = fibonacci(10)
 print("fibonacci is: ",result)
 
 # Generator (with yield keyword)
+
+# def fibonacci():
+#     a,b = 0,1
+#     while True:
+#         yield a
+#         a, b = b, a + b
+# result = fibonacci()
+# print(next(result))
+# print(next(result))
+
+
+# or
+def get_fibonacci(n):
+    a = 0
+    b = 1
+    while True:
+        yield a
+        a, b = b, a + b
+
+for num in get_fibonacci(5):
+    print(num)
+    
+#  or 
+  
 def fibonacci(n):
     a, b = 0, 1
     for _ in range(n):
