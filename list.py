@@ -11,3 +11,25 @@ def get_max_number(number_list):
 
 result = get_max_number(number_list)
 print(result)
+
+# 2. Find all pairs with given sum
+num_list = [1,5,2,7,9,4,6,5]
+total_sum = 10
+result = []
+def get_all_pair_sum(data):
+    n = len(data)
+    for i in range(n):
+        for j in range(i+1, n):
+            if (data[i] + data[j]) == total_sum:
+                result.append((data[i], data[j]))
+    return result
+final_result = get_all_pair_sum(num_list)
+print(">>>>>2>>> : ", final_result)
+
+# or without function
+total_sum = 11
+n = len(num_list)
+for i in range(n):
+    for j in range(i+1, n):
+        if (num_list[i] + num_list[j]) == total_sum:
+            print(num_list[i], num_list[j])
