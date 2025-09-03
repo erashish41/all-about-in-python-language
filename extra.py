@@ -1,24 +1,8 @@
-#generate Fibonacci number using generator
-
-# def fibonacci():
-#     a,b = 0,1
-#     while True:
-#         yield a
-#         a, b = b, a + b
-# result = fibonacci()
-# print(next(result))
-# print(next(result))
-
-
-
-def get_fibonacci(n):
-    a = 0
-    b = 1
-    while True:
-        yield a
-        a, b = b, a + b
-
-for num in get_fibonacci(5):
-    print(num)
-
-    
+def get_prime(data):
+    if data < 2:
+        return f"{data} please check your number"
+    for i in range(2, int(data**0.5) + 1):
+        if data % i == 0:
+            return f"{data} number is not prime"
+    return f"{data} number is prime"
+print(get_prime(25))

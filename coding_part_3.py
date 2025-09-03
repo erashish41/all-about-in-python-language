@@ -105,3 +105,32 @@ def decorator_name(func):
 def add(a,b):
     return a+ b
 print(add(9,2))
+
+
+# create fibonacci series with generator
+def create_fibonacci(data):
+    a = 0
+    b = 1
+    for _ in range(data):
+        yield a
+        a, b = b, a + b
+        
+for num in create_fibonacci(5):
+    print(">>>test>>> : ",num)
+    
+# create fibonacci series with recursion
+def fibonacci(data):
+    if data <= 1:
+        return data
+    else:
+        return fibonacci(data - 1) + fibonacci(data - 2)
+    
+def get_fibonacci(count):
+    result = []
+    for n in range(count):
+        result.append(n)
+    return result
+
+for i in get_fibonacci(5):
+    print(">>>>> : ", i)
+        
