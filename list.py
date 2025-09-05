@@ -107,3 +107,12 @@ def get_sum(data):
 data = [1,2,3,4,5,6,7,8,9,10,11]
 print(get_sum(data))
       
+      
+# List comprehension
+numbers = [1,2,3,4,56,15,2,4,61,9]
+# add them
+sq = [n**2 for n in numbers ]
+print("list comprehension ",sq)
+
+even_cube = [n**3 for n in numbers if n % 2 == 0 ]
+print(even_cube)

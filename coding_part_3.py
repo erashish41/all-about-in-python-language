@@ -35,17 +35,6 @@ print("fibonacci is: ",result)
 
 
 # or
-def get_fibonacci(n):
-    a = 0
-    b = 1
-    while True:
-        yield a
-        a, b = b, a + b
-
-for num in get_fibonacci(5):
-    print(num)
-    
-#  or 
   
 def fibonacci(n):
     a, b = 0, 1
@@ -82,13 +71,13 @@ def say_hello():
 
 say_hello()
 
-# Real-world Example: Authentication in Django
-from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
+# # Real-world Example: Authentication in Django
+# from django.contrib.auth.decorators import login_required
+# from django.http import HttpResponse
 
-@login_required
-def my_view(request):
-    return HttpResponse("Hello, this is my first Django response")
+# @login_required
+# def my_view(request):
+#     return HttpResponse("Hello, this is my first Django response")
 
 print(">>>>>decorator two>>>>")
 # or 
@@ -105,6 +94,23 @@ def decorator_name(func):
 def add(a,b):
     return a+ b
 print(add(9,2))
+
+# Decorator with Authentication
+def required_login(func):
+    def wrapper(user):
+        if not user.get("logged_in"):
+            print("Access denied, Please log in.")
+            return 
+        return func(user)
+    return wrapper
+@required_login
+def dashboard(user):
+    print(f"welcome {user['name']} to your dashboard")
+user1 = {"name": "Ashish", "logged_in": False}
+user2 = {"name": "Rajat", "logged_in": True}
+
+dashboard(user1)
+dashboard(user2)
 
 
 # create fibonacci series with generator
@@ -133,4 +139,5 @@ def get_fibonacci(count):
 
 for i in get_fibonacci(5):
     print(">>>>> : ", i)
-        
+
+
