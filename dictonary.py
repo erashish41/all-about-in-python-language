@@ -34,3 +34,16 @@ print(">>>>>>>2>>>>>>",final_result)
 # sort using dict comprehension(values)
 sort_by_values = {k: v for k,v in sorted(marks.items(), key=lambda item:item[1])}
 print("hi2>>> : ",sort_by_values)
+
+# add 2 dict
+dict1 = {"a": 1, "b": 2}
+dict2 = {"c": 1, "d": 2}
+
+dict1.update(dict2)
+print("add dict ",dict1)
+
+merged = {**dict1, **dict2}
+print("merged dict ", merged)
+
+added = dict1 | dict2
+print(added)
