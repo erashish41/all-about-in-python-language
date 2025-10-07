@@ -116,3 +116,12 @@ print("list comprehension ",sq)
 
 even_cube = [n**3 for n in numbers if n % 2 == 0 ]
 print(even_cube)
+
+
+list1 = [1,2,3]
+list2 = [4,5,6]
+result1 = list1 + list2
+print("added list ",result1)
+
+list1.extend(list2)
+print("added new list ", list1)

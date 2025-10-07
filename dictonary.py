@@ -47,3 +47,21 @@ print("merged dict ", merged)
 
 added = dict1 | dict2
 print(added)
+
+# iterator dict
+my_dict = {"a": 1, "b": 2, "c": 3}
+for key in my_dict:
+    print(key)
+    
+for value in my_dict.values():
+    print(value)
+    
+data = {
+    "fruits": ["apple", "banana"],
+    "colors": ["red", "green"]
+}
+    
+for key, value in data.items():
+    print(key,value)
+    for v in value:
+        print(v)
