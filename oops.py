@@ -91,59 +91,14 @@
 # print(my_car.fuel_type())
 # print(Car.total_car)
 
-# d. with general method with @staticmethod
-class Car:
-    def __init__(self,brand,model):
-        self.__brand = brand
-        self.model = model
-        
-    def full_name(self):
-        return f"{self.__brand} - {self.model}"
-    
-    def get_brand(self):
-        return self.__brand + " !"
-    
-    def fuel_type(self):
-        return "Petrol or Diesel"
-    
-    @staticmethod
-    def general_description():
-        return "Car is mode of transport"
-class ElectricCar(Car):
-    def __init__(self, brand, model,battery):
-        super().__init__(brand,model)
-        self.battery = battery
-        
-    def fuel_type(self):
-        return "Electric Charge"
-        
-    
-my_car = Car("Toyota", "Corolla")
-print(my_car.model)
-print(my_car.get_brand())
-print(my_car.full_name())
-print(my_car.fuel_type())
-print(my_car.general_description())
-print("-------")
-
-
-my_electriccar = ElectricCar("Tesla","Model s","80kWh")
-print(my_electriccar.model)
-print(my_electriccar.get_brand())
-print(my_electriccar.battery)
-print(my_electriccar.full_name())
-print(my_electriccar.fuel_type())
-print(my_electriccar.general_description())
-
-
-# # e. with general method with @property
+# # d. with general method with @staticmethod
 # class Car:
 #     def __init__(self,brand,model):
 #         self.__brand = brand
-#         self.__model = model
+#         self.model = model
         
 #     def full_name(self):
-#         return f"{self.__brand} - {self.__model}"
+#         return f"{self.__brand} - {self.model}"
     
 #     def get_brand(self):
 #         return self.__brand + " !"
@@ -154,34 +109,79 @@ print(my_electriccar.general_description())
 #     @staticmethod
 #     def general_description():
 #         return "Car is mode of transport"
-    
-#     @property
-#     def get_model(self):
-#         return self.__model
 # class ElectricCar(Car):
 #     def __init__(self, brand, model,battery):
 #         super().__init__(brand,model)
 #         self.battery = battery
         
-    
 #     def fuel_type(self):
 #         return "Electric Charge"
         
     
 # my_car = Car("Toyota", "Corolla")
-# my_car.model = "LC"
+# print(my_car.model)
 # print(my_car.get_brand())
 # print(my_car.full_name())
 # print(my_car.fuel_type())
 # print(my_car.general_description())
-# print(my_car.get_model)
 # print("-------")
 
 
 # my_electriccar = ElectricCar("Tesla","Model s","80kWh")
+# print(my_electriccar.model)
 # print(my_electriccar.get_brand())
 # print(my_electriccar.battery)
 # print(my_electriccar.full_name())
 # print(my_electriccar.fuel_type())
 # print(my_electriccar.general_description())
-# print(my_electriccar.get_model)
+
+
+# e. with general method with @property
+class Car:
+    def __init__(self,brand,model):
+        self.__brand = brand
+        self.__model = model
+        
+    def full_name(self):
+        return f"{self.__brand} - {self.__model}"
+    
+    def get_brand(self):
+        return self.__brand + " !"
+    
+    def fuel_type(self):
+        return "Petrol or Diesel"
+    
+    @staticmethod
+    def general_description():
+        return "Car is mode of transport"
+    
+    @property
+    def get_model(self):
+        return self.__model
+class ElectricCar(Car):
+    def __init__(self, brand, model,battery):
+        super().__init__(brand,model)
+        self.battery = battery
+        
+    
+    def fuel_type(self):
+        return "Electric Charge"
+        
+    
+my_car = Car("Toyota", "Corolla")
+my_car.model = "LC"
+print(my_car.get_brand())
+print(my_car.full_name())
+print(my_car.fuel_type())
+print(my_car.general_description())
+print(my_car.get_model)
+print("-------")
+
+
+my_electriccar = ElectricCar("Tesla","Model s","80kWh")
+print(my_electriccar.get_brand())
+print(my_electriccar.battery)
+print(my_electriccar.full_name())
+print(my_electriccar.fuel_type())
+print(my_electriccar.general_description())
+print(my_electriccar.get_model)
