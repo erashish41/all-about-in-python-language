@@ -188,21 +188,43 @@
 # print(my_electriccar.get_model)
 
 
-# f. class Inheritance and isinstance() function -- check ElectricCar is isinstance() of Car
+# # f. class Inheritance and isinstance() function -- check ElectricCar is isinstance() of Car
+# class Car:
+#     def __init__(self,brand,model):
+#         self.__brand = brand
+#         self.__model = model
+        
+# class ElectricCar(Car):
+#     def __init__(self, brand, model,battery):
+#         super().__init__(brand,model)
+#         self.battery = battery
+        
+
+# my_electriccar = ElectricCar("Tesla","Model s","80kWh")
+
+
+# print("-------")
+# print(isinstance(my_electriccar,Car))
+# print(isinstance(my_electriccar,ElectricCar))
+
+# g. MultiInheritance
 class Car:
     def __init__(self,brand,model):
         self.__brand = brand
         self.__model = model
         
-class ElectricCar(Car):
-    def __init__(self, brand, model,battery):
-        super().__init__(brand,model)
-        self.battery = battery
         
+class Battery:
+    def battery_info(self):
+        return "this is battery"
 
-my_electriccar = ElectricCar("Tesla","Model s","80kWh")
+class Engine:
+    def engine_info(self):
+        return "this is engine"
 
+class ElectricCar(Battery,Engine,Car):
+    pass
 
-print("-------")
-print(isinstance(my_electriccar,Car))
-print(isinstance(my_electriccar,ElectricCar))
+my_electriccar = ElectricCar("Tesla", "Model S")
+print(my_electriccar.battery_info())
+print(my_electriccar.engine_info())
