@@ -66,3 +66,5 @@ def is_palindrome(str):
     return True
 result = get_is_palindrome("malayalam")
 print(">>>>>>>>6>>>>>>", result)
+
+

@@ -16,6 +16,22 @@ def reverse_string_data(data):
     return result
 print(reverse_string_data("ashish"))
 
+# new method
+given_string = "Python is famous language !"
+def reverse_string_left_right(given_string):
+    given_list = list(given_string)
+    left = 0
+    right = len(given_list) - 1
+
+    while left < right:
+        given_list[left], given_list[right] = given_list[right], given_list[left]
+        left += 1
+        right -= 1
+        return "".join(given_list)
+result = reverse_string_left_right(given_string)
+print(result)
+
+
 # 2. write program to delete all consonants from given strings. "Python and Data Science"
 def delete_consonants(data):
     result = ""
