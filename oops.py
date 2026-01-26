@@ -1,3 +1,4 @@
+# # initial Class Based
 # class Car:
 #     def __init__(self,brand,model):
 #         self.brand = brand
@@ -8,17 +9,17 @@
 #     def full_name(self):
 #         return f"{self.brand} - {self.model}"
         
-# # my_car = Car("Toyota", "Corolla")
-# # print(my_car.brand)
-# # print(my_car.model)
-# # print(my_car.full_name())
-# # print("-----")
+# my_car = Car("Toyota", "Corolla")
+# print(my_car.brand)
+# print(my_car.model)
+# print(my_car.full_name())
+# print("-----")
 
-# # my_new_car = Car("Maruti", "Baleno")
-# # print(my_new_car.brand)
-# # print(my_new_car.model)
-# # print(my_new_car.full_name())
-# # print("-----")
+# my_new_car = Car("Maruti", "Baleno")
+# print(my_new_car.brand)
+# print(my_new_car.model)
+# print(my_new_car.full_name())
+# print("-----")
 
 # # a. Inheritance
 # class ElectricCar(Car):
@@ -207,24 +208,24 @@
 # print(isinstance(my_electriccar,Car))
 # print(isinstance(my_electriccar,ElectricCar))
 
-# g. MultiInheritance
-class Car:
-    def __init__(self,brand,model):
-        self.__brand = brand
-        self.__model = model
+# # g. MultiInheritance
+# class Car:
+#     def __init__(self,brand,model):
+#         self.__brand = brand
+#         self.__model = model
         
         
-class Battery:
-    def battery_info(self):
-        return "this is battery"
+# class Battery:
+#     def battery_info(self):
+#         return "this is battery"
 
-class Engine:
-    def engine_info(self):
-        return "this is engine"
+# class Engine:
+#     def engine_info(self):
+#         return "this is engine"
 
-class ElectricCar(Battery,Engine,Car):
-    pass
+# class ElectricCar(Battery,Engine,Car):
+#     pass
 
-my_electriccar = ElectricCar("Tesla", "Model S")
-print(my_electriccar.battery_info())
-print(my_electriccar.engine_info())
+# my_electriccar = ElectricCar("Tesla", "Model S")
+# print(my_electriccar.battery_info())
+# print(my_electriccar.engine_info())
